@@ -2,6 +2,8 @@ window.Helper.request = () => { }
 
 describe("#app", function () {
   let token;
+  window.localStorage.removeItem('token');
+
   window.localStorage.getItem = () => token
   window.localStorage.setItem = (name, newToken) => token = newToken
   window.localStorage.removeItem = () => token = null
