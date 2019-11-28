@@ -30,11 +30,12 @@
   Logo.classList.add('logo');
 
   const Form = create('form');
+  Form.classList.add('form');
 
   const FormContent = `
-    <input name="email" type="email" minlength="5" placeholder="email">
-    <input name="password" type="password" placeholder="senha">
-    <button type="submit">Enviar</button>
+    <input class="form__input" name="email" type="email" minlength="5" placeholder="Entre com seu e-mail">
+    <input class="form__input" name="password" type="password" placeholder="Digite sua senha supersecreta">
+    <button class="form__button" type="submit" disabled>Entrar</button>
   `;
 
   Form.onsubmit = async e => {
@@ -77,19 +78,24 @@
     app.classList.add('logged');
     Login.style.display = 'none';
     Ul.classList.add('container');
-    let all = '';
+    let items = '';
 
     users.forEach(item => {
-      all += `
-        <li>
-          <p>
-            ${item.login}
-          </p>
+      const { avatar_url: avatar, login } = item;
+
+      items += `
+        <li class="container__item">
+          <a href="#users" class="container__item_link">
+            <img class="container__avatar" src="${avatar}">
+            <p class="container__text">
+              ${login}
+            </p>
+          </a>
         </li>
       `
     });
 
-    Ul.innerHTML = all;
+    Ul.innerHTML = items;
     app.appendChild(Ul)
   }
 
