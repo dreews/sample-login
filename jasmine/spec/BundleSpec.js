@@ -1,17 +1,17 @@
+let token;
+const app = document.querySelector('#app')
+
+window.localStorage.removeItem('token');
+window.localStorage.getItem = () => token
+window.localStorage.setItem = (name, newToken) => token = newToken
+window.localStorage.removeItem = () => token = null
+
 window.Helper.request = () => { }
 
 describe("#app", function () {
-  let token;
-  window.localStorage.removeItem('token');
-
-  window.localStorage.getItem = () => token
-  window.localStorage.setItem = (name, newToken) => token = newToken
-  window.localStorage.removeItem = () => token = null
-
   beforeEach(() => {
-    const app = document.querySelector('#app')
     app.innerHTML = '';
-    window.localStorage.removeItem();
+    token = null
   })
 
   describe("#init", function () {

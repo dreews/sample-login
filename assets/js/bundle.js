@@ -134,17 +134,20 @@
       this.binds();
       this.render();
 
-      const { isExpired: tokenIsExpired, developersApi } = this.token();
+      const token = this.token();
 
-      if (tokenIsExpired) {
-        localStorage.removeItem('token');
-        location.href = '#login';
-        this.app.appendChild(this.login);
-      } else {
-        location.href = '#users';
-        const users = await this.getDevelopersList(developersApi);
-        this.renderPageUsers(users);
+      if (token) {
+        if (token.isExpired) {
+          localStorage.removeItem('token');
+          location.href = '#login';
+          this.app.appendChild(this.login);
+        } else {
+          location.href = '#users';
+          const users = await this.getDevelopersList(token.developersApi);
+          this.renderPageUsers(users);
+        }
       }
+
     }
   };
 
