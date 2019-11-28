@@ -1,6 +1,6 @@
 # Sample Login
 
-Este é um desafio técnico para Desenvolvedor Frontend.
+Este é um desafio técnico para Desenvolvedor Frontend:
 
 - Restaura partes do código
 - adiciona requisições assíncronas
@@ -9,17 +9,21 @@ Este é um desafio técnico para Desenvolvedor Frontend.
 - fake token gerado
 - sessão deve durar 5 min
 - e-mail válido html5
+- Não usar nenhum CSS Framework
 - testar partes sensiveis
 
 ## Tecnologias utilizadas
 
-HTML5, JavaScript e CSS. Simples assim. Sem libs, sem frameworks, sem dependências externas.
-Você não deve usar nenhum CSS Framework (Bootstrap, PureCss, etc.);
+- HTML5, JavaScript e CSS (Sem libs, sem frameworks, sem dependências externas)
 
 ## Entrega
 
 [http://hideiki-sample-login.herokuapp.com/](http://hideiki-sample-login.herokuapp.com/)
 
 ## Preview
+
 ![](doc/preview.gif)
 
+## Unit test
+> `/jasmine/SpecRunner.html`
+[http://hideiki-sample-login.herokuapp.com/jasmine/SpecRunner.html](http://hideiki-sample-login.herokuapp.com/jasmine/SpecRunner.html)
